@@ -29,31 +29,31 @@ export default function Header(){
   //     });
   // }, []);
 
-  useEffect(() => {
-  fetch(`${baseURL}/profile`, {
-    credentials: "include",
-  })
-    .then(res => {
-      if (!res.ok) {
-        // If status is 401 or any error, treat as logged out
-        setUserInfo(null);
-        setLoading(false);
-        return;
-      }
-      return res.json();
-    })
-    .then(data => {
-      if (data?.username) {
-        setUserInfo(data);
-      }
-      setLoading(false);
-    })
-    .catch(err => {
-      console.error("Profile fetch failed:", err);
-      setUserInfo(null);
-      setLoading(false);
-    });
-}, []);
+//   useEffect(() => {
+//   fetch(`${baseURL}/profile`, {
+//     credentials: "include",
+//   })
+//     .then(res => {
+//       if (!res.ok) {
+//         // If status is 401 or any error, treat as logged out
+//         setUserInfo(null);
+//         setLoading(false);
+//         return;
+//       }
+//       return res.json();
+//     })
+//     .then(data => {
+//       if (data?.username) {
+//         setUserInfo(data);
+//       }
+//       setLoading(false);
+//     })
+//     .catch(err => {
+//       console.error("Profile fetch failed:", err);
+//       setUserInfo(null);
+//       setLoading(false);
+//     });
+// }, []);
 
 
   function logout(){
