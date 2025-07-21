@@ -4,21 +4,48 @@ export const UserContext = createContext({});
 export function UserContextProvider  ({ children }) {
     const [userInfo, setUserInfo] = useState(null);
     const baseURL=process.env.REACT_APP_API_URL;
-    useEffect(() => {
-    fetch(`${baseURL}/profile`, {
-      credentials: 'include', // important to include cookies
-    })
-      .then(res => res.json())
-      .then(data => {
+  //   useEffect(() => {
+  //   fetch(`${baseURL}/profile`, {
+  //     credentials: 'include', // important to include cookies
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setUserInfo({
+  //         username: data.username,
+  //         id: data.userId,  // ✅ this is what SinglePost.js uses
+  //       });
+  //     })
+  //     .catch(err => {
+  //       console.error("Error fetching user profile:", err);
+  //     });
+  // }, []);
+  useEffect(() => {
+  fetch(`${baseURL}/profile`, {
+    credentials: 'include',
+  })
+    .then(async res => {
+      if (!res.ok) {
+        // Unauthorized or error — clear userInfo
+        setUserInfo(null);
+        return;
+      }
+
+      const data = await res.json();
+      if (data?.username && data?.userId) {
         setUserInfo({
           username: data.username,
-          id: data.userId,  // ✅ this is what SinglePost.js uses
+          id: data.userId,
         });
-      })
-      .catch(err => {
-        console.error("Error fetching user profile:", err);
-      });
-  }, []);
+      } else {
+        setUserInfo(null);
+      }
+    })
+    .catch(err => {
+      console.error("Error fetching user profile:", err);
+      setUserInfo(null);
+    });
+}, []);
+
     return(
         <UserContext.Provider value={{userInfo, setUserInfo}}>
         {children}
