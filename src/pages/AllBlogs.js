@@ -20,7 +20,7 @@ function AllBlogs() {
           posts.map(post => (
             <Link to={`/post/${post._id}`} key={post._id} className="post-card">
               <div className="image">
-                <img src={`${baseURL}/${post.cover}`} alt={post.title} />
+                <img src={`${baseURL}${post.cover}`} alt={post.title} />
               </div>
               <div className="content">
                 <h3>{post.title}</h3>

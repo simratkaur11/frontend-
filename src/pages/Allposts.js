@@ -98,7 +98,7 @@ export default function AllPosts() {
           {posts.length > 0 && posts.map(post => (
             <Link to={`/post/${post._id}`} key={post._id} className="post-row-card">
               <div className="post-image">
-                <img src={`${baseURL}/${post.cover}`} alt={post.title} />
+                <img src={`${baseURL}${post.cover}`} alt={post.title} />
               </div>
               <div className="post-info">
                 <h3>{post.title}</h3>
