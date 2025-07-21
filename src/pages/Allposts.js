@@ -85,7 +85,7 @@ export default function AllPosts() {
    const baseURL=process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    fetch(`${baseURL}/post`)
+    fetch(`${baseURL}/post`,{credentials:'include'})
       .then(res => res.json())
       .then(posts => setPosts(posts));
   }, []);

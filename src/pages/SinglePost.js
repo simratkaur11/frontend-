@@ -15,13 +15,13 @@ export default function SinglePost() {
   const baseURL=process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    fetch(`${baseURL}/post/${id}`)
+    fetch(`${baseURL}/post/${id}`,{credentials:'include'})
       .then(res => res.json())
       .then(data => setPost(data));
   }, [id]);
 
   useEffect(() => {
-    axios.get(`${baseURL}/post/${id}/comments`)
+    axios.get(`${baseURL}/post/${id}/comments`,{withCredentials:true})
     .then(res => setComments(res.data));
   }, [id]);
 
@@ -49,7 +49,7 @@ export default function SinglePost() {
       withCredentials: true
     });
     setNewComment("");
-    const res = await axios.get(`${baseURL}/post/${id}/comments`);
+    const res = await axios.get(`${baseURL}/post/${id}/comments`,{withCredentials:true});
     setComments(res.data);
   } catch (err) {
     alert("Failed to add comment");

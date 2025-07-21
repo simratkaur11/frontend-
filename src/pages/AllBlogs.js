@@ -5,7 +5,7 @@ function AllBlogs() {
   const [posts, setPosts] = useState([]);
   const baseURL=process.env.REACT_APP_API_URL;
   useEffect(() => {
-    fetch(`${baseURL}/post`).then(response => {
+    fetch(`${baseURL}/post`,{credentials:'include'}).then(response => {
       response.json().then(posts => {
         setPosts(posts);
       });

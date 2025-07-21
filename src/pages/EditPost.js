@@ -15,7 +15,7 @@ const EditPost = () => {
   const baseURL=process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    axios.get(`${baseURL}/post/${id}`).then(res => {
+    axios.get(`${baseURL}/post/${id}`,{withCredentials:true}).then(res => {
       const post = res.data;
       setTitle(post.title);
       setSummary(post.summary);
