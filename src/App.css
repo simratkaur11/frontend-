@@ -1,0 +1,158 @@
+
+
+
+/* ===== RESET & GLOBAL ===== */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  /* background-image: url('./assests/bggg.jpg');  */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #f9f1f1;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  border-radius: 16px;
+  max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.8rem;
+  font-family: 'Lora', serif;
+  color: #111;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+nav a:hover {
+  color: #ff6e9e;
+}
+
+/* ===== CONTAINERS ===== */
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.auth-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== POST CARD ===== */
+.post {
+  display: flex;
+  gap: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.post:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.image img {
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.texts h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #222;
+}
+p.info {
+  margin: 10px 0;
+  color: #888;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 10px;
+}
+p.info a.author {
+  color: #444;
+  font-weight: 500;
+  font-style: italic;
+}
+p.summary {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+/* ===== LOGIN / REGISTER ===== */
+
+
+ form.login,
+form.register {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background-color: #555;
+}
+form h1 {
+  text-align: center;
+}
+
+
+ @media (max-width: 768px) {
+  .post {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+} 
+
+

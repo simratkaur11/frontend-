@@ -1,0 +1,151 @@
+/* body {
+  background: linear-gradient(to right, #fefefe, #f2f7fc);
+  font-family: 'Segoe UI', sans-serif;
+} */
+ body {
+  background-color: #fafbfc;
+  background-image: url('bggg.jpg');
+}
+
+
+/* Container layout */
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Form box */
+.create-post-form {
+  background-color: #ffffff;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 700px;
+  transition: box-shadow 0.3s ease;
+}
+
+.create-post-form:hover {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Heading */
+.create-post-form h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Input fields */
+.create-post-form input[type="text"],
+.create-post-form input[type="file"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.create-post-form input[type="text"]:focus,
+.create-post-form input[type="file"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.create-post-form input[type="text"]:hover,
+.create-post-form input[type="file"]:hover {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+}
+
+
+/* Quill editor */
+.quill-editor {
+  height: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow:scroll;
+  background-color: #fff;
+  padding: 10px;
+  font-size: 16px;
+}
+.quill-editor .ql-container {
+  height: 240px; /* ensures internal editor doesn't overflow */
+  border: none;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.quill-editor .ql-toolbar {
+  border-radius: 8px 8px 0 0;
+  border: none;
+}
+
+/* Submit button */
+.create-post-form button {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.create-post-form button:hover {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  transform: scale(1.01);
+}
+
+/* Smooth transitions for all elements */
+.create-post-form input,
+.create-post-form button,
+.quill-editor {
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.create-post-form {
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.create-post-form button:active {
+  transform: scale(0.97);
+}
+
+.create-post-container {
+  animation: fadeInPage 0.8s ease forwards;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
