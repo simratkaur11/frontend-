@@ -8,7 +8,7 @@ export default function Registerpage() {
   ev.preventDefault();
   try {
     const response = await fetch(`${baseURL}/register`, {
-      credentials:true,
+      credentials:'include',
       method: 'POST',
       body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
