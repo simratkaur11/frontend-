@@ -4,7 +4,6 @@ import { UserContext } from "./UserContext";
 
 export default function Header(){
   const {userInfo,setUserInfo} = useContext(UserContext);
-  const [loading, setLoading] = useState(true);
   const [isHovered ,setIsHovered] =useState(false)
   const [hoverLogout ,setHoverLogout] =useState(false)
 
@@ -65,7 +64,6 @@ export default function Header(){
      window.location.href='/';
   });
 }
-  if (loading) return null;
   const username = userInfo?.username;
     return(
          <header>
