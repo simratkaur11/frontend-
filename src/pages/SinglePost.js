@@ -65,7 +65,7 @@ export default function SinglePost() {
     <div className="single-post-page">
     <div className="single-post">
       <h2>{post.title}</h2>
-      <img className="pos-image" src={`http://localhost:4000${post.cover}`} alt={post.title} />
+      <img className="pos-image" src={`${baseURL}/${post.cover}`} alt={post.title} />
     <div className="-content" dangerouslySetInnerHTML={{ __html: post.content }} />
 
       {isAuthor && (

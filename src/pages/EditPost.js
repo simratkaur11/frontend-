@@ -73,7 +73,7 @@ const EditPost = () => {
   <div>
     <p>Current Image:</p>
     <img 
-      src={`http://localhost:4000${existingCoverUrl}`} 
+      src={`${baseURL}/${existingCoverUrl}`} 
       alt="Cover" 
       style={{ width: '200px', borderRadius: '10px', marginBottom: '10px' }} 
     />
